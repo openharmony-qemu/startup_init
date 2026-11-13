@@ -143,6 +143,8 @@ accessibility:x:1103:
 motion_host:x:3065:
 uhdf_driver:x:3066:
 fusion_host:x:3067:
+fusion_ranging:x:6067:
+partner_device_agent:x:6068:
 memmgr:x:1111:
 ispserver:x:3821:
 dfs_share:x:3822:

@@ -32,7 +32,9 @@ static void HandleModuleUpdate(void)
         INIT_LOGE("HandleModuleUpdate, fork fail.");
     } else if (pid == 0) {
         INIT_LOGI("HandleModuleUpdate, exec chekc_module_update.");
-        int ret = execv("/system/bin/check_module_update_init", nullptr);
+        const char *path = "/system/bin/check_module_update_init";
+        char *const argv[] = { const_cast<char *>(path), nullptr };
+        int ret = execv(path, argv);
         if (ret != 0) {
             INIT_LOGE("exec error, ret = [%d], err = [%s].", ret, strerror(errno));
         }
